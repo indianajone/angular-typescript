@@ -1,4 +1,4 @@
-let config = {
+module.exports = {
     resolve: {
         extensions: ['.ts']
     },
@@ -9,15 +9,8 @@ let config = {
 };
 
 
-config.module.rules.push({
+module.exports.module.rules.push({
     test: /\.ts$/,
-    exclude: /(node_modules|bower_components)/,
+    exclude: /node_modules/,
     loader: ['ng-annotate-loader', 'ts-loader']
 });
-
-config.module.rules.push({
-    test: /\.html$/,
-    loader: 'html-loader'
-});
-
-module.exports = config;
